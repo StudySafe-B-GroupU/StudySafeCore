@@ -9,11 +9,11 @@ class Venues(models.Model):
     capacity = models.IntegerField()
 
 class Members(models.Model):
-    id = models.CharField(max_length=10)
+    hku_id = models.CharField(max_length=10)
     name = models.CharField(max_length=150)
 
 class Records(models.Model):
-    id = models.ForeignKey(Members, on_delete=models.CASCADE)
+    hku_id = models.ForeignKey(Members, on_delete=models.CASCADE)
     venueCode = models.ForeignKey(Venues, on_delete=models.CASCADE)
     entry_time = models.TimeField(auto_now=False, auto_now_add=False)
     exit_time = models.TimeField(auto_now=False, auto_now_add=False)
