@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pschk)*l=8g(%tv#a_$e%(ll^2@%!z%@ke-3czayaemhevv3a@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pure-shore-57756.herokuapp.com', 'localhost','127.0.0.1']
 
 
 # Application definition
