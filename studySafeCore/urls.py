@@ -14,11 +14,11 @@ urlpatterns = [
     path('api/venues/modify/<int:id>', modify_venue.as_view(), name='modify_venue'),
     path('api/venues/delete/<int:id>', delete_venue.as_view(), name='delete_venue'),
 
-    path('api/HKUmembers', listAll_hkumembers.as_view(), name='listAll_hkumembers'),
-    path('api/HKUmembers/create', create_hkumembers.as_view(), name='create_hkumembers'),
-    path('api/HKUmembers/<int:id>', view_hkumembers.as_view(), name='view_hkumembers'),
-    path('api/HKUmembers/modify/<int:id>', modify_hkumembers.as_view(), name='modify_hkumembers'),
-    path('api/HKUmembers/delete/<int:id>', delete_hkumembers.as_view(), name='delete_hkumembers'),
+    path('api/hkumembers', listAll_hkumembers.as_view(), name='listAll_hkumembers'),
+    path('api/hkumembers/create', create_hkumembers.as_view(), name='create_hkumembers'),
+    path('api/hkumembers/<int:id>', view_hkumembers.as_view(), name='view_hkumembers'),
+    path('api/hkumembers/modify/<int:id>', modify_hkumembers.as_view(), name='modify_hkumembers'),
+    path('api/hkumembers/delete/<int:id>', delete_hkumembers.as_view(), name='delete_hkumembers'),
     
     path('api/records/create', create_record.as_view(), name='create_record'),
 ]
