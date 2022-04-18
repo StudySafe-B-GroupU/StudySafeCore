@@ -4,6 +4,7 @@ from django.urls import URLPattern, path
 from studySafeCore import views
 from studySafeCore.venues_api_view import (delete_venue, list_all_venues, create_venue, view_venue, modify_venue, delete_venue)
 from studySafeCore.HKUmembers_api_view import (create_hkumembers, listAll_hkumembers, view_hkumembers, modify_hkumembers, delete_hkumembers)
+from studySafeCore.records_api_view import (create_record)
 
 urlpatterns = [
     path('hello', views.hello),
