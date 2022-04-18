@@ -41,7 +41,6 @@ class list_all_venues(generics.ListAPIView):
 
 class create_venue(generics.CreateAPIView):
     serializer_class = VenuesSerializer
-    print(request)
     def post(self, request, **kwargs):
         # venueCode = self.kwargs['venueCode']
         # location = self.kwargs['location']
