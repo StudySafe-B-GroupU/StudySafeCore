@@ -18,4 +18,6 @@ urlpatterns = [
     path('api/HKUmembers/<int:id>', view_hkumembers.as_view(), name='view_hkumembers'),
     path('api/HKUmembers/modify/<int:id>', modify_hkumembers.as_view(), name='modify_hkumembers'),
     path('api/HKUmembers/delete/<int:id>', delete_hkumembers.as_view(), name='delete_hkumembers'),
+    
+    path('api/records/create', create_record.as_view(), name='create_record'),
 ]
