@@ -1,3 +1,4 @@
+from urllib import request
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Venues
@@ -39,14 +40,20 @@ class list_all_venues(generics.ListAPIView):
 
 
 class create_venue(generics.CreateAPIView):
-    queryset = Venues.objects.all()
     serializer_class = VenuesSerializer
-
+    print(request)
+    def post(self, request, **kwargs):
+        # venueCode = self.kwargs['venueCode']
+        # location = self.kwargs['location']
+        # type = self.kwargs['type']
+        # capacity = self.kwargs['capacity']
+        # Venues.objects.create(venueCode=venueCode, location=location, type=type, capacity=capacity)
+        Venues.objects.create(venueCode=request.data["venueCode"], location=request.data["location"], type=request.data["type"], capacity=request.data["capacity"])
+        return Response("Successfully create a new record")
 
 class view_venue(generics.RetrieveAPIView):
     lookup_field = 'id'
     serializer_class = VenuesSerializer
-
     def get_queryset(self, **kwargs):
         venue_id = self.kwargs['id']
         return Venues.objects.filter(id=venue_id)
@@ -55,17 +62,15 @@ class view_venue(generics.RetrieveAPIView):
 class modify_venue(generics.UpdateAPIView):
     lookup_field = 'id'
     serializer_class = VenuesSerializer
-
-    def get_queryset(self, **kwargs):
-        uid = self.kwargs['uid']
-        queryset = HKUMember.objects.filter(uid=uid)
-        return queryset
-
+    def update(self, request, **kwargs):
+        venue_id = self.kwargs['id']
+        Venues.objects.filter(id=venue_id).update(venueCode=request.data["venueCode"], location=request.data["location"], type=request.data["type"], capacity=request.data["capacity"])
+        return Response("Successsfully update a record")
 
 class delete_venue(generics.DestroyAPIView):
     lookup_field = 'id'
     serializer_class = VenuesSerializer
-
-    def get_queryset(self, **kwargs):
+    def destroy(self,request, **kwargs): 
         venue_id = self.kwargs['id']
-        return Venues.objects.filter(id=venue_id)
+        Venues.objects.filter(id=venue_id).delete()
+        return Response("Sucessfully delete a record")
