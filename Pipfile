@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 django = "~=4.0"
 djangorestframework = "*"
+gunicorn = "*"
+environs = "*"
+django-environ = "*"
 
 [dev-packages]
 autopep8 = "*"

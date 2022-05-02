@@ -21,6 +21,7 @@ class Venues(models.Model):
 class Records(models.Model):
     hku_id = models.ForeignKey(HKUMembers, on_delete=models.CASCADE, default = 1)
     venueCode = models.ForeignKey(Venues, on_delete=models.CASCADE)
+    event = models.CharField(max_length=5, default="Entry")
     date_time = models.DateTimeField(auto_now=False, auto_now_add=False)
     def __str__(self):
         return f'{self.hku_id}'
