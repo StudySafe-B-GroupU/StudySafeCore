@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6af35bb96c262662ffa71acb675bb1f5784e13813d2ecbb9185e846d6ea07d9a"
+            "sha256": "09b42fb834a5bc8530ec9266899598a3fe3dd6b7f17f73aed4e35ec7ffee56c2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -46,6 +46,20 @@
             "markers": "python_version < '3.9'",
             "version": "==0.2.1"
         },
+        "dj-database-url": {
+            "hashes": [
+                "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163",
+                "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"
+            ],
+            "version": "==0.5.0"
+        },
+        "dj-email-url": {
+            "hashes": [
+                "sha256:64257c4f9d8139a4af8e5267229d32260e433fbf257b0cf8fc855bb0cc39ca7d",
+                "sha256:ef36f8a324ec57cf3be5c7a7ef44ed6900ca0208624a918ab33adc1cf6427b39"
+            ],
+            "version": "==1.0.5"
+        },
         "django": {
             "hashes": [
                 "sha256:07c8638e7a7f548dc0acaaa7825d84b7bd42b10e8d22268b3d572946f1e9b687",
@@ -54,13 +68,12 @@
             "index": "pypi",
             "version": "==4.0.4"
         },
-        "django-environ": {
+        "django-cache-url": {
             "hashes": [
-                "sha256:42593bee519a527602a467c7b682aee1a051c2597f98c45f4f4f44169ecdb6e5",
-                "sha256:6f0bc902b43891656b20486938cba0861dc62892784a44919170719572a534cb"
+                "sha256:4559398a946ff24c4ee96e32c55e3b760bd69f7c2ba48844cdf8fcb4f76d10bd",
+                "sha256:9061f8e7ffbb29eb92ba93fa9058003ec92393e85c537d1969570652ff8721fa"
             ],
-            "index": "pypi",
-            "version": "==0.8.1"
+            "version": "==3.4.0"
         },
         "djangorestframework": {
             "hashes": [
@@ -71,6 +84,9 @@
             "version": "==3.13.1"
         },
         "environs": {
+            "extras": [
+                "django"
+            ],
             "hashes": [
                 "sha256:1e549569a3de49c05f856f40bce86979e7d5ffbbc4398e7f338574c220189124",
                 "sha256:a76307b36fbe856bdca7ee9161e6c466fd7fcffc297109a118c59b54e27e30c9"
