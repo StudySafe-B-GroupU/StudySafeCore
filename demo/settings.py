@@ -30,7 +30,7 @@ SECRET_KEY = env.str('QDD_SECRET_KEY')
 # DEBUG = True
 DEBUG= env.bool('QDD_DEBUG', default=False)
 
-ALLOWED_HOSTS = ['sheltered-retreat-01634.herokuapp.com', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = ['blooming-badlands-56728.herokuapp.com', 'localhost','127.0.0.1']
 
 
 # Application definition
