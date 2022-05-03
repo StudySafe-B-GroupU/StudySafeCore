@@ -8,9 +8,9 @@ django = "~=4.0"
 djangorestframework = "*"
 gunicorn = "*"
 environs = {extras = ["django"], version = "*"}
+psycopg2-binary = "*"
 
 [dev-packages]
-autopep8 = "*"
 
 [requires]
 python_version = "3.8"
