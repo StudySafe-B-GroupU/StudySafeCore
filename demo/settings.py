@@ -99,7 +99,9 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 # }
 
 DATABASES = {
-    'default': env.dj_db_url('postgres://pxzhigdmhblkmc:363cb90c40f75cf988b56382f9a5fedc202cd58db98d40e54751f458a7f816d2@ec2-3-217-113-25.compute-1.amazonaws.com:5432/de70sctrkhatt2')
+    'default': {
+        env.dj_db_url('postgres://pxzhigdmhblkmc:363cb90c40f75cf988b56382f9a5fedc202cd58db98d40e54751f458a7f816d2@ec2-3-217-113-25.compute-1.amazonaws.com:5432/de70sctrkhatt2')
+    }
 }
 
 # Password validation
