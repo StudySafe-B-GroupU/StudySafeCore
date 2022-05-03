@@ -6,7 +6,7 @@ from .record_serializers import RecordsSerializer
 from rest_framework import generics
 
 class list_all_records(generics.ListAPIView):
-    queryset = Venues.objects.all()
+    queryset = Records.objects.all()
     serializer_class = RecordsSerializer
 
 
