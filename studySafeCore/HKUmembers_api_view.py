@@ -12,7 +12,7 @@ class create_hkumembers(generics.CreateAPIView):
         HKUMembers.objects.create(hku_id=request.data["hku_id"], name=request.data["name"])
         return Response("Successfully create a new record")
 
-class listAll_hkumembers(generics.ListAPIView):
+class list_all_hkumembers(generics.ListAPIView):
     queryset = HKUMembers.objects.all()
     serializer_class = HkuMembersSerializer
 

@@ -5,6 +5,10 @@ from .models import Records, HKUMembers, Venues
 from .record_serializers import RecordsSerializer
 from rest_framework import generics
 
+class list_all_records(generics.ListAPIView):
+    queryset = Venues.objects.all()
+    serializer_class = RecordsSerializer
+
 
 class create_record(generics.CreateAPIView):
     serializer_class = RecordsSerializer
@@ -13,3 +17,4 @@ class create_record(generics.CreateAPIView):
         venueCode = Venues.objects.get(venueCode=request.data["venueCode"])
         Records.objects.create( hku_id=hku_id,venueCode=venueCode,date_time=request.data["date_time"])
         return Response("Successfully create a new record")
+
