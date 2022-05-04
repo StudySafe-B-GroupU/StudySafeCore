@@ -59,17 +59,17 @@ class view_venue(generics.RetrieveAPIView):
 
 
 class modify_venue(generics.UpdateAPIView):
-    lookup_field = 'id'
+    lookup_field = 'venueCode'
     serializer_class = VenuesSerializer
     def update(self, request, **kwargs):
-        venue_id = self.kwargs['id']
-        Venues.objects.filter(id=venue_id).update(venueCode=request.data["venueCode"], location=request.data["location"], type=request.data["type"], capacity=request.data["capacity"])
+        venueCode = self.kwargs['venueCode']
+        Venues.objects.filter(id=venueCode).update(location=request.data["location"], type=request.data["type"], capacity=request.data["capacity"])
         return Response("Successsfully update a record")
 
 class delete_venue(generics.DestroyAPIView):
-    lookup_field = 'id'
+    lookup_field = 'venueCode'
     serializer_class = VenuesSerializer
     def destroy(self,request, **kwargs): 
-        venue_id = self.kwargs['id']
-        Venues.objects.filter(id=venue_id).delete()
+        venueCode = self.kwargs['venueCode']
+        Venues.objects.filter(id=venueCode).delete()
         return Response("Sucessfully delete a record")

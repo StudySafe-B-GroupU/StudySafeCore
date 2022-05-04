@@ -17,24 +17,24 @@ class list_all_hkumembers(generics.ListAPIView):
     serializer_class = HkuMembersSerializer
 
 class view_hkumembers(generics.RetrieveAPIView):
-    lookup_field = 'id'
+    lookup_field = 'hku_id'
     serializer_class = HkuMembersSerializer
     def get_queryset(self, **kwargs):
-        hkuMember_id = self.kwargs['id']
-        return HKUMembers.objects.filter(id=hkuMember_id)
+        hku_id = self.kwargs['hku_id']
+        return HKUMembers.objects.filter(hku_id=hku_id)
 
 class modify_hkumembers(generics.UpdateAPIView):
-    lookup_field = 'id'
+    lookup_field = 'hku_id'
     serializer_class = HkuMembersSerializer
     def update(self, request, **kwargs):
-        hkuMember_id = self.kwargs['id']
-        HKUMembers.objects.filter(id=hkuMember_id).update(hku_id=request.data["hku_id"], name=request.data["name"])
+        hku_id = self.kwargs['hku_id']
+        HKUMembers.objects.filter(hku_id=hku_id).update(name=request.data["name"])
         return Response("Successsfully update a record")
 
 class delete_hkumembers(generics.DestroyAPIView):
-    lookup_field = 'id'
+    lookup_field = 'hku_id'
     serializer_class = HkuMembersSerializer
     def destroy(self,request, **kwargs): 
-        hkuMember_id = self.kwargs['id']
-        HKUMembers.objects.filter(id=hkuMember_id).delete()
+        hku_id = self.kwargs['hku_id']
+        HKUMembers.objects.filter(id=hku_id).delete()
         return Response("Sucessfully delete a record")
