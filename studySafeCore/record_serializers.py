@@ -5,4 +5,5 @@ class RecordsSerializer(serializers.Serializer):
     id  =serializers.IntegerField(read_only =True)
     hku_id = serializers.CharField(max_length = 10)
     venueCode = serializers.CharField(max_length = 200)
+    event = serializers.CharField(max_length = 5)
     date_time = serializers.DateTimeField()
