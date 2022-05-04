@@ -16,9 +16,9 @@ urlpatterns = [
 
     path('api/hkumembers', list_all_hkumembers.as_view(), name='list_all_hkumembers'),
     path('api/hkumembers/create', create_hkumembers.as_view(), name='create_hkumembers'),
-    path('api/hkumembers/<str: hku_id>', view_hkumembers.as_view(), name='view_hkumembers'),
-    path('api/hkumembers/modify/<str: hku_id>', modify_hkumembers.as_view(), name='modify_hkumembers'),
-    path('api/hkumembers/delete/<str: hku_id>', delete_hkumembers.as_view(), name='delete_hkumembers'),
+    path('api/hkumembers/<str:hku_id>', view_hkumembers.as_view(), name='view_hkumembers'),
+    path('api/hkumembers/modify/<str:hku_id>', modify_hkumembers.as_view(), name='modify_hkumembers'),
+    path('api/hkumembers/delete/<str:hku_id>', delete_hkumembers.as_view(), name='delete_hkumembers'),
     
     path('api/records', list_all_records.as_view(), name="list_all_records"),
     path('api/records/create', create_record.as_view(), name='create_record'),
