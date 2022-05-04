@@ -51,11 +51,11 @@ class create_venue(generics.CreateAPIView):
         return Response("Successfully create a new record")
 
 class view_venue(generics.RetrieveAPIView):
-    lookup_field = 'id'
+    lookup_field = 'venueCode'
     serializer_class = VenuesSerializer
     def get_queryset(self, **kwargs):
-        venue_id = self.kwargs['id']
-        return Venues.objects.filter(id=venue_id)
+        venueCode = self.kwargs['venueCode']
+        return Venues.objects.filter(venueCode=venueCode)
 
 
 class modify_venue(generics.UpdateAPIView):

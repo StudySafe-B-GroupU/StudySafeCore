@@ -17,13 +17,11 @@ class list_all_hkumembers(generics.ListAPIView):
     serializer_class = HkuMembersSerializer
 
 class view_hkumembers(generics.RetrieveAPIView):
-    lookup_field = 'venueCode'
+    lookup_field = 'id'
     serializer_class = HkuMembersSerializer
     def get_queryset(self, **kwargs):
-        # hkuMember_id = self.kwargs['id']
-        venueCode = self.kwargs['venueCode']
-        # return HKUMembers.objects.filter(id=hkuMember_id)
-        return HKUMembers.objects.filter(venueCode=venueCode)
+        hkuMember_id = self.kwargs['id']
+        return HKUMembers.objects.filter(id=hkuMember_id)
 
 class modify_hkumembers(generics.UpdateAPIView):
     lookup_field = 'id'
