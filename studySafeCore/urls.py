@@ -10,7 +10,7 @@ urlpatterns = [
     path('hello', views.hello),
     path('api/venues', list_all_venues.as_view(), name='list_all_venues'),
     path('api/venues/create', create_venue.as_view(), name='create_venue'),
-    path('api/venues/<int:id>', view_venue.as_view(), name='view_venue'),
+    path('api/venues/<char:venueCode>', view_venue.as_view(), name='view_venue'),
     path('api/venues/modify/<int:id>', modify_venue.as_view(), name='modify_venue'),
     path('api/venues/delete/<int:id>', delete_venue.as_view(), name='delete_venue'),
 
