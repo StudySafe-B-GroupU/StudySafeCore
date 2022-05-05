@@ -36,5 +36,5 @@ class delete_hkumembers(generics.DestroyAPIView):
     serializer_class = HkuMembersSerializer
     def destroy(self,request, **kwargs): 
         hku_id = self.kwargs['hku_id']
-        HKUMembers.objects.filter(id=hku_id).delete()
+        HKUMembers.objects.filter(hku_id=hku_id).delete()
         return Response("Sucessfully delete a record")

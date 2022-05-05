@@ -71,5 +71,5 @@ class delete_venue(generics.DestroyAPIView):
     serializer_class = VenuesSerializer
     def destroy(self,request, **kwargs): 
         venueCode = self.kwargs['venueCode']
-        Venues.objects.filter(id=venueCode).delete()
+        Venues.objects.filter(venueCode=venueCode).delete()
         return Response("Sucessfully delete a record")
