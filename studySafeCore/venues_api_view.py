@@ -63,7 +63,7 @@ class modify_venue(generics.UpdateAPIView):
     serializer_class = VenuesSerializer
     def update(self, request, **kwargs):
         venueCode = self.kwargs['venueCode']
-        Venues.objects.filter(id=venueCode).update(location=request.data["location"], type=request.data["type"], capacity=request.data["capacity"])
+        Venues.objects.filter(venueCode=venueCode).update(location=request.data["location"], type=request.data["type"], capacity=request.data["capacity"])
         return Response("Successsfully update a record")
 
 class delete_venue(generics.DestroyAPIView):
