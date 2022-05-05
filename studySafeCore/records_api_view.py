@@ -15,6 +15,6 @@ class create_record(generics.CreateAPIView):
     def post(self, request, **kwargs):
         hku_id = HKUMembers.objects.get(hku_id=request.data["hku_id"])
         venueCode = Venues.objects.get(venueCode=request.data["venueCode"])
-        Records.objects.create( hku_id=hku_id,venueCode=venueCode,date_time=request.data["date_time"])
+        Records.objects.create( hku_id=hku_id,venueCode=venueCode,event=request.data["event"],date_time=request.data["date_time"])
         return Response("Successfully create a new record")
 
